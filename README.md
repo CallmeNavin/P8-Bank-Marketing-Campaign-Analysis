@@ -137,7 +137,9 @@ https://archive.ics.uci.edu/dataset/222/bank+marketing
 
 **C. Methodology**
 
-x
+### Insights from Exploratory Data Analysis (EDA)
+Conversion rates vary significantly across **job**, **contact type**, and **campaign outcome**.  
+Details and full breakdown are visualized in the Power BI dashboard.
 
 **D. Actionable plans**
 
