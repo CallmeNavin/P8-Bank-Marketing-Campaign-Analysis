@@ -1,17 +1,17 @@
 # P8-Bank-Marketing-Campaign-Analysis
 
-**Version 1 - Dataset 1**
+**Version 1 - Dataset 1 - Predictive Analysis**
 
 **A. Project Overview**
 
 - The project aims to identify the best strategies to improve for the next marketing campaign by analyzing the last marketing campaign, identify the patterns that will help us find conclusions in order to develop future strategies.
-
 
 **B. Dataset Information**
 
 **Source**
 
 From: Bank Marketing Dataset (Kaggle)
+
 https://www.kaggle.com/datasets/janiobachmann/bank-marketing-dataset/data
 
 **Disclaimer:**
@@ -92,58 +92,92 @@ _**III. Evaluation**_
 
 Overall, Random Forest demonstrates incremental improvements over Logistic Regression, though the optimal choice depends on business priorities (higher precision vs. higher recall). The model will continue to be enhanced and benchmarked against more advanced methods over time.
 
+**Version 2 - Dataset 2 - Descriptive Analysis**
+
 **A. Project Overview**
 
 - The project aims to identify the best strategies to improve for the next marketing campaign by analyzing the last marketing campaign, identify the patterns that will help us find conclusions in order to develop future strategies.
 
+![Dashboard Visualization](Version%202%20-%20Descriptive%20Analysis%20%28Dataset%202%29/Visualization/Overview.png)
 
 **B. Dataset Information**
 
-**Source**
+**I. Source**
 
 - From: UCI Machine Learning Repository
 https://archive.ics.uci.edu/dataset/222/bank+marketing
 - Rows: 41,188
 - Columns: 20 (input variables) + 1 (target: y)
 
-**Variable Description**
+**II. Variable Description**
 
-**Customer Profile**
-1. age (numeric)
-2. job : type of job (categorical: "admin.","blue-collar","entrepreneur","housemaid","management","retired","self-employed","services","student","technician","unemployed","unknown")
-3. marital : marital status (categorical: "divorced","married","single","unknown"; note: "divorced" means divorced or widowed)
-4. education (categorical: "basic.4y","basic.6y","basic.9y","high.school","illiterate","professional.course","university.degree","unknown")
-5. default: has credit in default? (categorical: "no","yes","unknown")
-6. housing: has housing loan? (categorical: "no","yes","unknown")
-7. loan: has personal loan? (categorical: "no","yes","unknown")
+**1. Customer Profile**
+- age (numeric)
+- job : type of job (categorical: "admin.","blue-collar","entrepreneur","housemaid","management","retired","self-employed","services","student","technician","unemployed","unknown")
+- marital : marital status (categorical: "divorced","married","single","unknown"; note: "divorced" means divorced or widowed)
+- education (categorical: "basic.4y","basic.6y","basic.9y","high.school","illiterate","professional.course","university.degree","unknown")
+- default: has credit in default? (categorical: "no","yes","unknown")
+- housing: has housing loan? (categorical: "no","yes","unknown")
+- loan: has personal loan? (categorical: "no","yes","unknown")
+
 **Related with the last contact of the current campaign**
-8. contact: contact communication type (categorical: "cellular","telephone") 
-9. month: last contact month of year (categorical: "jan", "feb", "mar", ..., "nov", "dec")
-10. day_of_week: last contact day of the week (categorical: "mon","tue","wed","thu","fri")
-11. duration: last contact duration, in seconds (numeric). Important note:  this attribute highly affects the output target (e.g., if duration=0 then y="no"). Yet, the duration is not known before a call is performed. Also, after the end of the call y is obviously known. Thus, this input should only be included for benchmark purposes and should be discarded if the intention is to have a realistic predictive model.
+- contact: contact communication type (categorical: "cellular","telephone") 
+- month: last contact month of year (categorical: "jan", "feb", "mar", ..., "nov", "dec")
+- day_of_week: last contact day of the week (categorical: "mon","tue","wed","thu","fri")
+- duration: last contact duration, in seconds (numeric). Important note:  this attribute highly affects the output target (e.g., if duration=0 then y="no"). Yet, the duration is not known before a call is performed. Also, after the end of the call y is obviously known. Thus, this input should only be included for benchmark purposes and should be discarded if the intention is to have a realistic predictive model.
+
 **Other attributes**
-12. campaign: number of contacts performed during this campaign and for this client (numeric, includes last contact)
-13. pdays: number of days that passed by after the client was last contacted from a previous campaign (numeric; 999 means client was not previously contacted)
-14. previous: number of contacts performed before this campaign and for this client (numeric)
-15. poutcome: outcome of the previous marketing campaign (categorical: "failure","nonexistent","success")
+- campaign: number of contacts performed during this campaign and for this client (numeric, includes last contact)
+- pdays: number of days that passed by after the client was last contacted from a previous campaign (numeric; 999 means client was not previously contacted)
+- previous: number of contacts performed before this campaign and for this client (numeric)
+- poutcome: outcome of the previous marketing campaign (categorical: "failure","nonexistent","success")
+
 **Social and economic context attributes**
-16. emp.var.rate: employment variation rate - quarterly indicator (numeric)
-17. cons.price.idx: consumer price index - monthly indicator (numeric)     
-18. cons.conf.idx: consumer confidence index - monthly indicator (numeric)     
-19. euribor3m: euribor 3 month rate - daily indicator (numeric)
-20. nr.employed: number of employees - quarterly indicator (numeric)
+- emp.var.rate: employment variation rate - quarterly indicator (numeric)
+- cons.price.idx: consumer price index - monthly indicator (numeric)     
+- cons.conf.idx: consumer confidence index - monthly indicator (numeric)     
+- euribor3m: euribor 3 month rate - daily indicator (numeric)
+- nr.employed: number of employees - quarterly indicator (numeric)
+
 **Output variable (desired target)**
-21. y - has the client subscribed a term deposit? (binary: "yes","no")
+
+- y - has the client subscribed a term deposit? (binary: "yes","no")
 
 **C. Methodology**
 
-### Insights from Exploratory Data Analysis (EDA)
-Conversion rates vary significantly across **job**, **contact type**, and **campaign outcome**.  
-Details and full breakdown are visualized in the Power BI dashboard.
+**I. Key Findings**
 
-**D. Actionable plans**
+_**_1. Executive Overview_**_
+- The overall conversion rate is relatively low (~11%), below the industry benchmark (best-in-class banking campaigns can reach ~15%).
+→ The bank has no competitive advantage yet and needs to optimize targeting and contact strategy significantly.
 
-x
+**_2. Customer profile_**
+- Age: Customers aged 25–44 are the most likely to subscribe. The 45–54 group follows but only accounts for ~64% of the 25–44 group’s subscriptions.
+- Occupation: Admin, Blue-collar, and Technician represent the top subscribing occupations.
+- Marital status: Married customers nearly double the subscriptions compared to single or divorced ones.
+- Education: University and High school customers have the highest subscription numbers.
+- Financial profile:
+  + Customers without credit in default are ~3.7x more likely to subscribe than those with defaults.
+  + Customers with a house are ~1.2x more likely than those without.
+  + Customers without a personal loan are ~5.7x more likely than those with loans.
+
+**_3. Last Contact_**
+- Channel: Contacting customers via cellular is ~1.7x more effective than telephone.
+- Timing:
+  + May is the peak month for subscriptions (~2x higher than July, the second-highest).
+  + Day of the week shows little variation → efforts can be spread evenly.
+  + Duration: Calls lasting 61–300s are ~2.6x more likely to succeed than longer calls (301–900s).
+
+**_4. Other Attributes_**
+- Campaign frequency: Contrary to intuition, the more times a customer is contacted, the lower the conversion rate
+- Pdays: Customers who were never contacted in the current campaign are ~40x more likely to subscribe.
+- Previous campaigns: Customers who had never participated in earlier campaigns are ~7.7x more likely to subscribe.
+- Poutcome: Almost no customers who subscribed in a previous campaign subscribed again → very weak retention.
+
+**II. Actionable plans**
+- Target younger to mid-career, married customers with stable occupations, higher education, and fewer financial liabilities.
+- Prioritize cellular channel, intensify campaigns in May, and standardize call scripts to last between 1–5 minutes.
+- Limit over-contacting (avoid spam), prioritize fresh leads & establish dedicated retention strategies for past subscribers.
 
 **E. About Me**
 
