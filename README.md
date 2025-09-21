@@ -98,7 +98,9 @@ Overall, Random Forest demonstrates incremental improvements over Logistic Regre
 
 - The project aims to identify the best strategies to improve for the next marketing campaign by analyzing the last marketing campaign, identify the patterns that will help us find conclusions in order to develop future strategies.
 
-![Dashboard Visualization](Version%202%20-%20Descriptive%20Analysis%20%28Dataset%202%29/Visualization/Overview.png)
+![Dashboard Visualization](https://github.com/CallmeNavin/P8-Bank-Marketing-Campaign-Analysis/blob/main/Version%202%20-%20Descriptive%20Analysis%20(Dataset%202)/Visualization/Main%20Dashboard.jpg)
+_Explore more insights in the full Power BI dashboard_
+
 
 **B. Dataset Information**
 
